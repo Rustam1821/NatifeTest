@@ -18,7 +18,7 @@ class GifDatabaseRepository @Inject constructor(
         gifsDao.saveGifs(roomGifs)
     }
 
-    suspend fun observeGifs(): Flow<List<Gif>> {
+    fun observeGifs(): Flow<List<Gif>> {
         return gifsDao.observeGifs().map {
             dbToDomainMapper.map(it)
         }
