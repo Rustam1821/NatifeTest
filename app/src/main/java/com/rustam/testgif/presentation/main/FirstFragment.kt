@@ -30,8 +30,9 @@ class FirstFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            val gifId = "lallalal"
+            val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(gifId)
+            findNavController().navigate(direction)
         }
     }
 
