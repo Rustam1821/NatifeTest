@@ -1,9 +1,9 @@
-package com.rustam.testgif.network.repo
+package com.rustam.testgif.data.network.repo
 
 import com.rustam.testgif.BuildConfig
 import com.rustam.testgif.domain.entities.Gif
-import com.rustam.testgif.network.datasources.GifNetworkDataSource
-import com.rustam.testgif.network.mappers.GifApiToDomainMapper
+import com.rustam.testgif.data.network.datasources.GifNetworkDataSource
+import com.rustam.testgif.data.network.mappers.GifApiToDomainMapper
 import javax.inject.Inject
 
 class GifNetworkRepository @Inject constructor(

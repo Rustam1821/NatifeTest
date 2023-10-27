@@ -1,6 +1,6 @@
-package com.rustam.testgif.network.datasources
+package com.rustam.testgif.data.network.datasources
 
-import com.rustam.testgif.network.entities.ApiGif
+import com.rustam.testgif.data.network.entities.ApiGif
 import retrofit2.http.GET
 import retrofit2.http.Query
 

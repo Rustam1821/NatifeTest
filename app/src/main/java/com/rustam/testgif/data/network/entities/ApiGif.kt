@@ -1,4 +1,4 @@
-package com.rustam.testgif.network.entities
+package com.rustam.testgif.data.network.entities
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

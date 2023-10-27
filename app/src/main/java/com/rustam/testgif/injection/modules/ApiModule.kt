@@ -3,8 +3,8 @@ package com.rustam.testgif.injection.modules
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.rustam.testgif.BuildConfig
 import com.rustam.testgif.core.FeatureFlags
-import com.rustam.testgif.network.BackEndConfig
-import com.rustam.testgif.network.datasources.GifNetworkDataSource
+import com.rustam.testgif.data.network.BackEndConfig
+import com.rustam.testgif.data.network.datasources.GifNetworkDataSource
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
