@@ -4,8 +4,9 @@ import com.rustam.testgif.data.database.repo.GifDatabaseRepository
 import com.rustam.testgif.data.network.repo.GifNetworkRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class UpdateGifsUseCase (
+class UpdateGifsUseCase @Inject constructor (
     private val networkRepository: GifNetworkRepository,
     private val databaseRepository: GifDatabaseRepository
 ) {

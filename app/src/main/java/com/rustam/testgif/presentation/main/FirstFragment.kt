@@ -2,6 +2,7 @@ package com.rustam.testgif.presentation.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +30,8 @@ class FirstFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id)
+            Log.e("--->", "button clicked!")
+            //findNavController().navigate(R.id)
         }
     }
 
