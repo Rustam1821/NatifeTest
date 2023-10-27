@@ -26,6 +26,10 @@
         <action
             android:id="@+id/action_Second_Fragment_to_FirstFragment"
             app:destination="@+id/FirstFragment"/>
+        <argument
+            android:name="gifId"
+            app:argType="string"
+            android:defaultValue='"no_id"' />
     </fragment>
 
 </navigation>
