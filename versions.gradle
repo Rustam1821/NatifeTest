@@ -1,9 +1,9 @@
 ext {
     versions = [
 
-        compile_sdk:        32,
-        target_sdk:         32,
-        min_sdk:            23,
+        compile_sdk:        33,
+        target_sdk:         33,
+        min_sdk:            24,
 
         android_plugin:     '7.2.1',
         kotlin:             '1.7.10',

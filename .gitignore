@@ -27,6 +27,9 @@ proguard/
 # Log Files
 *.log
 
+# There's API Key
+gradle.properties
+
 # Android Studio Navigation editor temp files
 .navigation/
 
