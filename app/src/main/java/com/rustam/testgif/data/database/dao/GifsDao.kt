@@ -18,4 +18,7 @@ abstract class GifsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun saveGif(item: RoomGif)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun saveGifs(item: List<RoomGif>)
 }
