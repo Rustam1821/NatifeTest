@@ -2,16 +2,11 @@ package com.rustam.testgif.injection.components
 
 import com.rustam.testgif.injection.App
 import com.rustam.testgif.injection.modules.ApiModule
-import com.rustam.testgif.injection.modules.AppBindingModule
-import com.rustam.testgif.injection.modules.AppModule
-import com.rustam.testgif.injection.modules.DatabaseModule
-import com.rustam.testgif.injection.modules.ViewModelModule
+import com.rustam.testgif.injection.modules.*
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjection
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
-import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
