@@ -9,4 +9,5 @@ data class GifyResponse(
     val gifs: List<ApiGif>,
     @Json(name = "pagination")
     val pagination: Pagination,
+
 )

@@ -10,8 +10,9 @@ class GifDomainToUiMapper @Inject constructor(): Mapper<Gif, UiGif> {
         return UiGif(
             id = source.id,
             type = source.type,
-            url = source.url,
-            title = source.title
+            originalUrl = source.originalUrl,
+            previewUrl = source.previewUrl,
+            title = source.title,
         )
     }
 }

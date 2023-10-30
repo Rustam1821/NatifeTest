@@ -12,8 +12,7 @@ class GifNetworkRepository @Inject constructor(
     private val mapper: GifApiToDomainMapper,
 ) {
 
-    private var requestNumber = 0
-    private var offset = LIMIT * requestNumber++
+
 
     suspend fun getGifs(): List<Gif> {
         val response = dataSource.getGifs(
@@ -26,6 +25,8 @@ class GifNetworkRepository @Inject constructor(
     }
 
     companion object {
-        private const val LIMIT = 10
+        private const val LIMIT = 30
+        private var requestNumber = 0
+        private var offset = LIMIT * requestNumber++
     }
 }

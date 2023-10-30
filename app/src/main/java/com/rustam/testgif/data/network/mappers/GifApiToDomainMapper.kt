@@ -10,7 +10,8 @@ class GifApiToDomainMapper @Inject constructor() : Mapper<ApiGif, Gif> {
         return Gif(
             id = source.id,
             type = source.type,
-            url = source.url,
+            originalUrl = source.images.original.url,
+            previewUrl = source.images.preview.url,
             title = source.title
         )
     }

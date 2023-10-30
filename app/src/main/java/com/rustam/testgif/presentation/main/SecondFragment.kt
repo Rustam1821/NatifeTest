@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.rustam.testgif.R
 import com.rustam.testgif.databinding.FragmentFirstBinding
 import com.rustam.testgif.databinding.FragmentSecondBinding
@@ -32,6 +33,9 @@ class SecondFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textviewFirst.text = args.gifId
+
+        Glide.with(binding.root)
+            .load(args.gifId)
+            .into(binding.imageView)
     }
 }

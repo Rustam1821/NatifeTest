@@ -1,6 +1,5 @@
 package com.rustam.testgif.presentation.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.rustam.testgif.R
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.rustam.testgif.databinding.FragmentFirstBinding
 import com.rustam.testgif.presentation.GifViewModel
 import com.rustam.testgif.presentation.base.BaseFragment
@@ -30,23 +31,29 @@ class FirstFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.gifsFlow.collectWithLifecycleState {gifs ->
-            binding.textviewFirst.text = if (gifs.isEmpty()) {
-                "Loading ..."
-            } else {
-                gifs[0].title
+        val gifAdapter = GifAdapter().apply {
+            itemClickListener = {
+                openGif(url = it.originalUrl)
             }
+        }
+
+        binding.gifsRecyclerView.apply {
+            layoutManager = GridLayoutManager(view.context, 3)
+            adapter = gifAdapter
+        }
+
+        viewModel.gifsFlow.collectWithLifecycleState { gifs ->
+            gifAdapter.gifs = gifs
         }
 
         viewModel.updateGifs()
 
-        binding.buttonFirst.setOnClickListener {
-            val gifId = "lallalal"
-            val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(gifId)
-            viewModel.updateGifs()
-            //findNavController().navigate(direction)
-
-        }
     }
 
+
+    private fun openGif(url: String) {
+        val gifId = "https://media.giphy.com/media/yvBI03Km1DyIHvL7v5/giphy.gif"
+        val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(url)
+        findNavController().navigate(direction)
+    }
 }

@@ -16,7 +16,7 @@ abstract class GifsDao {
     @Query("SELECT * FROM gifs")
     abstract fun observeGifs(): Flow<List<RoomGif>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     abstract suspend fun saveGif(item: RoomGif)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -10,8 +10,9 @@ class GifDbToDomainMapper @Inject constructor() : Mapper<RoomGif, Gif> {
         return Gif(
             id = source.id,
             type = source.type,
-            url = source.url,
-            title = source.title
+            originalUrl = source.originalUrl,
+            previewUrl = source.previewUrl,
+            title = source.title,
         )
     }
 }
@@ -21,8 +22,9 @@ class GifDomainToDbMapper @Inject constructor() : Mapper<Gif, RoomGif> {
         return RoomGif(
             id = source.id,
             type = source.type,
-            url = source.url,
-            title = source.title
+            originalUrl = source.originalUrl,
+            previewUrl = source.previewUrl,
+            title = source.title,
         )
     }
 

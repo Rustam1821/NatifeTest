@@ -13,4 +13,20 @@ data class ApiGif(
     val url: String,
     @Json(name = "title")
     val title: String,
+    @Json(name = "images")
+    val images: ApiImages,
+)
+
+@JsonClass(generateAdapter = true)
+data class ApiImages(
+    @Json(name = "original")
+    val original: ApiImageUrl,
+    @Json(name = "preview_gif")
+    val preview: ApiImageUrl,
+)
+
+@JsonClass(generateAdapter = true)
+data class ApiImageUrl(
+    @Json(name = "url")
+    val url: String,
 )
