@@ -24,4 +24,9 @@ class GifDatabaseRepository @Inject constructor(
         }
     }
 
+    suspend fun refresh(gifs:List<Gif>) {
+        val roomGifs = domainToDbMapper.map(gifs)
+        gifsDao.refresh(roomGifs)
+    }
+
 }

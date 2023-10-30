@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.rustam.testgif">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="com.rustam.testgif.injection.App"
         android:allowBackup="true"

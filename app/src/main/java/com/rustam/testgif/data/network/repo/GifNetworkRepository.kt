@@ -1,6 +1,5 @@
 package com.rustam.testgif.data.network.repo
 
-import android.util.Log
 import com.rustam.testgif.BuildConfig
 import com.rustam.testgif.domain.entities.Gif
 import com.rustam.testgif.data.network.datasources.GifNetworkDataSource
@@ -12,13 +11,21 @@ class GifNetworkRepository @Inject constructor(
     private val mapper: GifApiToDomainMapper,
 ) {
 
-
-
     suspend fun getGifs(): List<Gif> {
         val response = dataSource.getGifs(
             apKey = BuildConfig.API_KEY,
             limit = LIMIT,
             offset = offset,
+        )
+        val gifs = response.gifs
+        return mapper.map(gifs)
+    }
+
+    suspend fun getGifsNeo(limit: Int, offsett: Int): List<Gif> {
+        val response = dataSource.getGifs(
+            apKey = BuildConfig.API_KEY,
+            limit = limit,
+            offset = offsett,
         )
         val gifs = response.gifs
         return mapper.map(gifs)

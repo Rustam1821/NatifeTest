@@ -52,7 +52,6 @@ class FirstFragment : BaseFragment() {
 
 
     private fun openGif(url: String) {
-        val gifId = "https://media.giphy.com/media/yvBI03Km1DyIHvL7v5/giphy.gif"
         val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(url)
         findNavController().navigate(direction)
     }
