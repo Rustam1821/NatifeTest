@@ -86,4 +86,7 @@ dependencies {
 
     // Leak Canary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary"
+
+    //Giphy
+    implementation "com.giphy.sdk:ui:$versions.giphy"
 }
