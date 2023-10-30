@@ -1,5 +1,6 @@
 package com.rustam.testgif.domain.usecases
 
+import android.util.Log
 import com.rustam.testgif.data.database.repo.GifDatabaseRepository
 import com.rustam.testgif.data.network.repo.GifNetworkRepository
 import kotlinx.coroutines.Dispatchers

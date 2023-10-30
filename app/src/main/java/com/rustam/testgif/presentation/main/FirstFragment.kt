@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rustam.testgif.R
 import com.rustam.testgif.databinding.FragmentFirstBinding
@@ -17,7 +18,7 @@ class FirstFragment : BaseFragment() {
 
     private val binding by viewBinding(FragmentFirstBinding::bind)
 
-    private lateinit var viewModel: GifViewModel
+    private val viewModel: GifViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +30,22 @@ class FirstFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.gifsFlow.collectWithLifecycleState {gifs ->
+            binding.textviewFirst.text = if (gifs.isEmpty()) {
+                "Loading ..."
+            } else {
+                gifs[0].title
+            }
+        }
+
+        viewModel.updateGifs()
+
         binding.buttonFirst.setOnClickListener {
             val gifId = "lallalal"
             val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(gifId)
-            findNavController().navigate(direction)
+            viewModel.updateGifs()
+            //findNavController().navigate(direction)
+
         }
     }
 
